@@ -1,4 +1,4 @@
-package schedule_course
+package schedulecourse
 
 import "testing"
 

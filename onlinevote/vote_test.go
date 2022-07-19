@@ -1,4 +1,4 @@
-package online_vote
+package onlinevote
 
 import (
 	"reflect"

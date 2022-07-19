@@ -1,4 +1,4 @@
-package perfect_number
+package perfectnumber
 
 func CheckPerfectNumber(num int) bool {
 	if num == 1 {
@@ -16,4 +16,3 @@ func CheckPerfectNumber(num int) bool {
 	}
 	return sum == num
 }
-

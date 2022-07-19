@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	perfect "github.com/dinghenc/leetcode-go/perfect_number"
+	perfect "github.com/dinghenc/leetcode-go/perfectnumber"
 	"github.com/pkg/errors"
 )
 
