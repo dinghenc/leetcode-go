@@ -19,7 +19,7 @@ func main() {
 	log.Println(perfectNumbers)
 
 	m := make(map[string]interface{})
-	if err := json.Unmarshal([]byte(`{"id":"123","name":"ding-he"}`), &m); err != nil {
+	if err := json.Unmarshal([]byte(`{"id":"123","name":"hhh"}`), &m); err != nil {
 		log.Fatal(err)
 	}
 	log.Println(m)
@@ -46,7 +46,7 @@ func findPerfectNumber() []int {
 
 func httpServer() {
 	http.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
-		if _, err := io.WriteString(writer, `{"id":"15043216","name":"ding-he"}`); err != nil {
+		if _, err := io.WriteString(writer, `{"id":"2022","name":"hhh"}`); err != nil {
 			writer.WriteHeader(http.StatusInternalServerError)
 			return
 		}
