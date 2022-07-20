@@ -1,4 +1,4 @@
-package trietree
+package trie
 
 type Node struct {
 	children [26]*Node
