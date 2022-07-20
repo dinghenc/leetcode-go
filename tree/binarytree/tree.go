@@ -1,4 +1,4 @@
-package tree
+package binarytree
 
 import (
 	"strconv"
@@ -30,14 +30,14 @@ func Unmarshal(s string) *Node {
 	if s == "" {
 		return nil
 	}
-	nodeStrs := strings.Split(s, "#")
+	nodeStrArr := strings.Split(s, "#")
 	index := 0
 	var dfs func() *Node
 	dfs = func() *Node {
-		if nodeStrs[index] == "nil" {
+		if nodeStrArr[index] == "nil" {
 			return nil
 		}
-		val, _ := strconv.Atoi(nodeStrs[index])
+		val, _ := strconv.Atoi(nodeStrArr[index])
 		root := New(val)
 		index++
 		root.Left = dfs()

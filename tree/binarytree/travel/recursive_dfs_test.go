@@ -3,13 +3,14 @@ package travel
 import (
 	"testing"
 
-	"github.com/dinghenc/leetcode-go/tree"
+	"github.com/dinghenc/leetcode-go/tree/binarytree"
+
 	"github.com/stretchr/testify/assert"
 )
 
 func TestOrderDfs(t *testing.T) {
 	s := "1#2#4#nil#nil#5#nil#6#nil#nil#3#7#8#nil#nil#nil#nil#"
-	root := tree.Unmarshal(s)
+	root := binarytree.Unmarshal(s)
 
 	preorderTravel := PreOrder(root)
 	inorderTravel := InOrder(root)

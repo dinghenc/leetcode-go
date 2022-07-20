@@ -1,12 +1,12 @@
 package travel
 
 import (
-	"github.com/dinghenc/leetcode-go/tree"
+	"github.com/dinghenc/leetcode-go/tree/binarytree"
 )
 
-func PreOrderWithStack(root *tree.Node) []int {
+func PreOrderWithStack(root *binarytree.Node) []int {
 	var t []int
-	var stack []*tree.Node
+	var stack []*binarytree.Node
 	node := root
 	for node != nil || len(stack) != 0 {
 		for node != nil {
@@ -21,9 +21,9 @@ func PreOrderWithStack(root *tree.Node) []int {
 	return t
 }
 
-func InOrderWithStack(root *tree.Node) []int {
+func InOrderWithStack(root *binarytree.Node) []int {
 	var t []int
-	var stack []*tree.Node
+	var stack []*binarytree.Node
 	node := root
 	for node != nil || len(stack) != 0 {
 		for node != nil {
@@ -38,11 +38,11 @@ func InOrderWithStack(root *tree.Node) []int {
 	return t
 }
 
-func PostOrderWithStack(root *tree.Node) []int {
+func PostOrderWithStack(root *binarytree.Node) []int {
 	var t []int
-	var stack []*tree.Node
+	var stack []*binarytree.Node
 	node := root
-	var prev *tree.Node
+	var prev *binarytree.Node
 	for node != nil || len(stack) != 0 {
 		for node != nil {
 			stack = append(stack, node)
