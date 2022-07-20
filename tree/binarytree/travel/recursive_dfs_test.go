@@ -4,7 +4,6 @@ import (
 	"testing"
 
 	"github.com/dinghenc/leetcode-go/tree/binarytree"
-
 	"github.com/stretchr/testify/assert"
 )
 
