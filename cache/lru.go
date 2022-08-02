@@ -1,46 +1,46 @@
 package cache
 
 type LRU struct {
-	Head *ListNode
-	Tail *ListNode
+	head *ListNode
+	tail *ListNode
 	m    map[int]*ListNode
 }
 
 type ListNode struct {
-	Prev *ListNode
-	Next *ListNode
+	prev *ListNode
+	next *ListNode
 	Val  int
 }
 
 func NewListNode() (*ListNode, *ListNode) {
 	head := new(ListNode)
 	tail := new(ListNode)
-	head.Next = tail
-	tail.Prev = head
+	head.next = tail
+	tail.prev = head
 	return head, tail
 }
 
 func NewLRU() *LRU {
 	head, tail := NewListNode()
 	return &LRU{
-		Head: head,
-		Tail: tail,
+		head: head,
+		tail: tail,
 		m:    make(map[int]*ListNode),
 	}
 }
 
 func (l *ListNode) Insert(node *ListNode) {
-	node.Prev = l
-	node.Next = l.Next
-	l.Next.Prev = node
-	l.Next = node
+	node.prev = l
+	node.next = l.next
+	l.next.prev = node
+	l.next = node
 }
 
 func (l *ListNode) Remove() *ListNode {
-	l.Prev.Next = l.Next
-	l.Next.Prev = l.Prev
-	l.Prev = nil
-	l.Next = nil
+	l.prev.next = l.next
+	l.next.prev = l.prev
+	l.prev = nil
+	l.next = nil
 	return l
 }
 
@@ -50,7 +50,7 @@ func (l *LRU) Get(key int) int {
 		return -1
 	}
 	node = node.Remove()
-	l.Head.Insert(node)
+	l.head.Insert(node)
 	return node.Val
 }
 
@@ -62,5 +62,5 @@ func (l *LRU) Set(key int, val int) {
 	} else {
 		node.Remove()
 	}
-	l.Head.Insert(node)
+	l.head.Insert(node)
 }
