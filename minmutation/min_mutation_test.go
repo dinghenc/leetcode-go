@@ -1,6 +1,18 @@
 package minmutation
 
-import "testing"
+import (
+	"sync/atomic"
+	"testing"
+)
+
+func TestAtomic(t *testing.T) {
+	i := int32(1)
+	if atomic.CompareAndSwapInt32(&i, 1, 2) {
+		t.Log("CAS done: ", i)
+		return
+	}
+	t.Log("No CAS: ", i)
+}
 
 func Test_minMutation(t *testing.T) {
 	type args struct {
